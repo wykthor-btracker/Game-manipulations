@@ -39,7 +39,13 @@ git push origin master
 ```
 ### Updating your repository
 First you should have the original and forked repositories added.
-So `git remote -v `should return
+To add another repository to the remote tracked list, run
+```
+git remote add [name] [url]
+```
+no brackets needed, just using them here to better clarification.
+
+Then `git remote -v `should return
 ```
 origin https://github.com/wykthor-btracker/Game-manipulations (fetch)
 origin https://github.com/wykthor-btracker/Game-manipulations (push)
