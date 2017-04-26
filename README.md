@@ -25,4 +25,5 @@ Armazenar funções e dados de cada exército.
 
 ## Contribuidores
 [Wykthor Gabriel](https://github.com/wykthor-btracker)
+
 [Marcos Fabricio](https://github.com/MarcosFabriciio)
