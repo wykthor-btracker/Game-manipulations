@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <string.h>
-
+#ifndef tabuleiro_h
+#define tabuleiro_h
+#endif
 typedef struct tabuleiro tabuleiro;
 typedef struct tabuleiro *refTabuleiro;
 
