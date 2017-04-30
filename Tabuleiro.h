@@ -8,7 +8,7 @@ struct tabuleiro
 {
 	int *posicao;
 	int *dimensao;
-	//insira ponteiro definido para pecas aqui
+	pontPeca *lista;
 	char *bitmap;
 	//char **sons;
 	char *nome;

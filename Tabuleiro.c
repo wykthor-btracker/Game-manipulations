@@ -8,12 +8,17 @@ refTabuleiro init(int *pos, int *dim, char *bitmap, char *nome)
 	refTabuleiro novo = malloc(sizeof(tabuleiro));
 	novo->posicao = malloc(sizeof(int)*2);
 	novo->posicao = pos;
+	
 	novo->dimensao = malloc(sizeof(int)*2);
 	novo->dimensao = dim;
+	
 	novo->bitmap = malloc(sizeof(char));
 	strcpy(novo->bitmap,bitmap);
+	
 	novo->nome = malloc(sizeof(char)*10);
 	strcpy(novo->nome,nome);
+	
+	novo->lista = malloc(sizeof(pontPeca));
 	return novo;
 }
 
@@ -45,6 +50,7 @@ char *pegarBitmap(refTabuleiro atual)
 {
 	return atual->bitmap;
 }
+
 char *pegarNome(refTabuleiro atual)
 {
 	return atual->nome;
