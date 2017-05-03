@@ -1,3 +1,4 @@
+
 # Nosso estilo de código:
 * Dando nomes aos bois:
   * Os nomes de variáveis, funções, etc, serão feitos no modelo camelCase
@@ -20,5 +21,3 @@
 * Sons.
 * Tabuleiro pai em ponteiro
 
-
- 
