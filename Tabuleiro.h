@@ -12,6 +12,7 @@ struct tabuleiro
 	char *bitmap;
 	//char **sons;
 	char *nome;
+	int **centros; // Uma lista contendo os centros de quadrantes definidos para um tabuleiro quadrado.
 };
 
 refTabuleiro init(int *pos, int *dim, char *bitmap, char *nome);

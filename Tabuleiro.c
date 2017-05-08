@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include "Tabuleiro.h"
 #define DEBUG if(0)
+#define NUMEROQUADRANTES 64
 
 refTabuleiro init(int *pos, int *dim, char *bitmap, char *nome)
 {
@@ -22,6 +23,20 @@ refTabuleiro init(int *pos, int *dim, char *bitmap, char *nome)
 	return novo;
 }
 
+int **listaPos(refTabuleiro tabu)
+{
+	int i,**lista = malloc(sizeof(int*)*NUMEROQUADRANTES);
+	for(i=0;i<8;i++) lista[i] = malloc(sizeof(int)*2);
+	int dist = tabu->dimensao[0]/8;
+	lista[0][0] = dist/2;
+	lista[0][1] = dist/2;
+	int j;
+	for(i=0;i<8;i++)
+	{
+		for(j=0;j<8;j++)
+		{
+			a
+}
 void fechar(refTabuleiro morto)
 {
 	free(morto->posicao);
