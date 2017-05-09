@@ -6,8 +6,8 @@ typedef struct tabuleiro *refTabuleiro;
 
 struct tabuleiro
 {
-	int *posicao;
-	int *dimensao;
+	int posicaoX,posicaoY;
+	int dimensaoX,dimensaoY;
 	pontPeca *lista;
 	char *bitmap;
 	//char **sons;
@@ -15,7 +15,7 @@ struct tabuleiro
 	int **centros; // Uma lista contendo os centros de quadrantes definidos para um tabuleiro quadrado.
 };
 
-refTabuleiro init(int *pos, int *dim, char *bitmap, char *nome);
+refTabuleiro init(int px,int py,int dx,int dy, int *dim, char *bitmap, char *nome);
 //Inicializa o objeto referenciado pelo ponteiro refTabuleiro.
 
 void fechar(refTabuleiro morto);

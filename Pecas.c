@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "Pecas.h"
+#include "Tabuleiro.h"
 #define DEBUG if(0)
 
 pontPeca initPeca(int *pos, char *nome, char *imagem,refTabuleiro pai)

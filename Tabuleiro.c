@@ -1,17 +1,18 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "Tabuleiro.h"
+#include "Pecas.h"
 #define DEBUG if(0)
 #define NUMEROQUADRANTES 64
 
-refTabuleiro init(int *pos, int *dim, char *bitmap, char *nome)
+refTabuleiro init(int px,int py,int dx,int dy, int *dim, char *bitmap, char *nome)
 {
 	refTabuleiro novo = malloc(sizeof(tabuleiro));
-	novo->posicao = malloc(sizeof(int)*2);
-	novo->posicao = pos;
+	novo->posicaoX = px;
+	novo->posicaoY = py;
 	
-	novo->dimensao = malloc(sizeof(int)*2);
-	novo->dimensao = dim;
+	novo->dimensaoX = dx;
+	novo->dimensaoY = dy;
 	
 	novo->bitmap = malloc(sizeof(char));
 	strcpy(novo->bitmap,bitmap);
@@ -23,28 +24,17 @@ refTabuleiro init(int *pos, int *dim, char *bitmap, char *nome)
 	return novo;
 }
 
-int **listaPos(refTabuleiro tabu)
+
+void matarPonteiro(void *pointer)
 {
-	int i,**lista = malloc(sizeof(int*)*NUMEROQUADRANTES);
-	for(i=0;i<8;i++) lista[i] = malloc(sizeof(int)*2);
-	int dist = tabu->dimensao[0]/8;
-	lista[0][0] = dist/2;
-	lista[0][1] = dist/2;
-	int j;
-	for(i=0;i<8;i++)
-	{
-		for(j=0;j<8;j++)
-		{
-			a
+	free(pointer);
+	pointer = NULL;
 }
+
 void fechar(refTabuleiro morto)
 {
-	free(morto->posicao);
-	free(morto->dimensao);
 	free(morto->bitmap);
 	free(morto->nome);
-	morto->posicao = 	NULL;
-	morto->dimensao = 	NULL;
 	morto->bitmap = 	NULL;
 	morto->nome = 		NULL;
 	free(morto);
@@ -53,12 +43,18 @@ void fechar(refTabuleiro morto)
 
 int *pegarPos(refTabuleiro atual)
 {
-	return atual->posicao;
+	int *pos = malloc(sizeof(int)*2);
+	pos[1] = atual->posicaoX;
+	pos[0] = atual->posicaoY;
+	return pos;
 }
 
 int *pegarDimensao(refTabuleiro atual)
 {
-	return atual->dimensao;
+	int *dimensao = malloc(sizeof(int)*2);
+	dimensao[0] = atual->dimensaoY;
+	dimensao[1] = atual->dimensaoX;
+	return dimensao;
 }
 
 char *pegarBitmap(refTabuleiro atual)
@@ -73,12 +69,14 @@ char *pegarNome(refTabuleiro atual)
 
 void mudarPos(int *novaPos,refTabuleiro atual)
 {
-	atual->pos = novaPos;
+	atual->posicaoX = novaPos[1];
+	atual->posicaoY = novaPos[0];
 }
 
 void mudarDimensao(int *novaDimensao,refTabuleiro atual)
 {
-	atual->dimensao = novaDimensao;
+	atual->dimensaoY = novaDimensao[0];
+	atual->dimensaoX = novaDimensao[1];
 }
 
 void mudarBitmap(char *novoBitmap,refTabuleiro atual)
