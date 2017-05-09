@@ -1,7 +1,17 @@
 #include <stdio.h>
-#DEFINE DEBUG if(0)
+#include <stdlib.h>
+#include "Pecas.h"
+#include "Tabuleiro.h"
+#define DEBUG if(0)
 
-int main(int argc, char **argv)
+pontPeca initPeca(int *pos, char *nome, char *imagem,refTabuleiro pai)
 {
-	return 0;
+	pontPeca new = malloc(sizeof(peca));
+	new->pos = pos;
+	new->Nome = malloc(sizeof(char)*10);
+	strcpy(new->Nome,nome);
+	new->Imagem = malloc(sizeof(char)*100);
+	strcpy(new->Imagem,imagem);
+	new->pai = pai;
+	return new;
 }
