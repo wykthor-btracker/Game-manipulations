@@ -1,7 +1,19 @@
 #include <stdio.h>
-#DEFINE DEBUG if(0)
+#ifndef pecas_h
+#define pecas_h
+#endif
 
-int main(int argc, char **argv)
+typedef struct peca peca;
+typedef struct peca *pontPeca;
+
+struct peca
 {
-	return 0;
-}
+	int *pos;
+	char *Nome;
+	char *Imagem;
+	//Sons.
+	refTabuleiro pai;
+};
+
+pontPeca initPeca(int *pos, char *nome, char *imagem,refTabuleiro pai);
+	
