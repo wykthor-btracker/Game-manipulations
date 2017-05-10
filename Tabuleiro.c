@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "Tabuleiro.h"
-#include "Pecas.h"
 #define DEBUG if(0)
 #define NUMEROQUADRANTES 64
 
@@ -20,7 +19,7 @@ refTabuleiro init(int px,int py,int dx,int dy, int *dim, char *bitmap, char *nom
 	novo->nome = malloc(sizeof(char)*10);
 	strcpy(novo->nome,nome);
 	
-	novo->lista = malloc(sizeof(pontPeca));
+	//novo->lista = malloc(sizeof(pontPeca));
 	return novo;
 }
 

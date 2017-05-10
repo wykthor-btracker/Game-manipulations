@@ -10,7 +10,7 @@ struct tabuleiro
 {
 	int posicaoX,posicaoY;
 	int dimensaoX,dimensaoY;
-	pontPeca *lista;
+	//pontPeca *lista;
 	char *bitmap;
 	//char **sons;
 	char *nome;

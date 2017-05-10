@@ -1,6 +1,6 @@
 #include <allegro.h>
 #include <time.h>
-#include "Tabuleiro.h"
+//#include "Tabuleiro.h"
 
 int main()
 {
