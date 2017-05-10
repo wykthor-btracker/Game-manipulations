@@ -1,4 +1,5 @@
 #include "count.h"
+#include <time.h>
 
 void TICKS()
 {

@@ -2,6 +2,7 @@
 #define COUNT_H_INCLUDED
 
 #include <allegro.h>
+#include <time.h>
 
 volatile int milisegundos;
 volatile int ticks;

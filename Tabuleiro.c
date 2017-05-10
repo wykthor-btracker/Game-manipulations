@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
+#include <allegro.h>
 #include "Tabuleiro.h"
 #define DEBUG if(0)
 #define NUMEROQUADRANTES 64

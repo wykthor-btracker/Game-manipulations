@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <allegro.h>
+#include <time.h>
 #ifndef tabuleiro_h
 #define tabuleiro_h
 #endif
