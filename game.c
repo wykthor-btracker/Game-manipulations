@@ -1,8 +1,12 @@
-﻿#include <stdio.h>
-#include <stdlib.h>
-#include <allegro.h>
+﻿#include <allegro.h>
 #include <time.h>
-//#include "Tabuleiro.h"
+#include "contadores/count.h"
+
+void setupGUI (char* , int , int );
+void abilitaBotaoFechar();
+void fecharJogo();
+volatile int sairDoPrograma = FALSE;
+void desenhaTABOO(BITMAP* ,int ,int );
 
 int main()
 {
@@ -15,6 +19,7 @@ int main()
 
     ///BITMAPS
     BITMAP* buffer =  create_bitmap(SCREEN_W,SCREEN_H);
+
 
     ///VARIAVEIS
 
@@ -42,3 +47,44 @@ int main()
     return 0;
 }
 END_OF_MAIN()
+
+
+void setupGUI (char* title, int width, int heigh)
+{
+	allegro_init();
+	install_timer();
+	install_keyboard();
+	install_mouse();
+	set_color_depth(32);
+	set_gfx_mode(GFX_AUTODETECT_WINDOWED,width,heigh,0,0);
+	install_sound(DIGI_AUTODETECT,MIDI_AUTODETECT, NULL);
+	set_window_title(title);
+}
+END_OF_FUNCTION(setupGUI)
+
+void abilitaBotaoFechar()
+{
+    LOCK_VARIABLE(sairDoPrograma);
+    LOCK_FUNCTION(fecharJogo);
+    set_close_button_callback(fecharJogo);
+}
+END_OF_FUNCTION(abilitaBotaoFechar);
+
+void fecharJogo()
+{
+    sairDoPrograma = TRUE;
+}
+END_OF_FUNCTION(fecharJogo)
+
+void desenhaTABOO(BITMAP* buffer,int L,int C)
+{
+    int i,j;
+    for(i = 0;i < L;i++)
+        {
+            for(j = 0;j < C;j++)
+            {
+                rect(buffer, 50 + j * 40, 50 + i * 40, 50 + j * 40 + 40,50 + i * 40 + 40, makecol(255,255,255));
+            }
+        }
+}
+END_OF_FUNCTION(desenhaTABOO)
