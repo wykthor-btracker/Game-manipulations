@@ -6,6 +6,8 @@
 typedef struct tabuleiro tabuleiro;
 typedef struct tabuleiro *refTabuleiro;
 
+extern int sairDoPrograma;
+
 struct tabuleiro
 {
 	int posicaoX,posicaoY;
@@ -38,6 +40,14 @@ void mudarDimensao(int *novaDimensao,refTabuleiro atual);
 void mudarBitmap(char *novoBitmap,refTabuleiro atual);
 
 void mudarNome(char *novoNome,refTabuleiro atual);
+
+void setupGUI (char* titulo, int width, int height);
+
+void abilitaBotaoFechar();
+
+void fecharJogo();
+
+void desenhaTABOO(BITMAP* buffer,int L,int C);
 
 
 	
