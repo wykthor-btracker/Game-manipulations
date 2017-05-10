@@ -89,3 +89,39 @@ void mudarNome(char *novoNome,refTabuleiro atual)
 	strcpy(atual->nome,novoNome);
 }
 
+void setupGUI (char* title, int width, int heigh)
+{
+	allegro_init();
+	install_timer();
+	install_keyboard();
+	install_mouse();
+	install_sound(DIGI_AUTODETECT,MIDI_AUTODETECT, NULL);
+	set_color_depth(32);
+	set_gfx_mode(GFX_AUTODETECT_WINDOWED,width,heigh,0,0);
+	set_window_title(title);
+}
+
+void abilitaBotaoFechar()
+{
+    LOCK_VARIABLE(sairDoPrograma);
+    LOCK_FUNCTION(fecharJogo);
+    set_close_button_callback(fecharJogo);
+}
+
+void fecharJogo()
+{
+    sairDoPrograma = TRUE;
+}
+
+void desenhaTABOO(BITMAP* buffer,int L,int C)
+{
+    int i,j;
+    for(i = 0;i < L;i++)
+        {
+            for(j = 0;j < C;j++)
+            {
+                rect(buffer, 50 + j * 40, 50 + i * 40, 50 + j * 40 + 40,50 + i * 40 + 40, makecol(255,255,255));
+            }
+        }
+}
+
