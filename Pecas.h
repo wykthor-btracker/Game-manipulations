@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "Tabuleiro.h"
 #ifndef pecas_h
 #define pecas_h
 #endif
