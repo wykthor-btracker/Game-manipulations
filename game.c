@@ -1,3 +1,5 @@
+﻿#include <stdio.h>
+#include <stdlib.h>
 #include <allegro.h>
 #include <time.h>
 //#include "Tabuleiro.h"
